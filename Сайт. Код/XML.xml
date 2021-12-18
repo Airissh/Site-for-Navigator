@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<footer>
+<adress>
+    <title>АДРЕС:</title>
+    <city>г. Могилев</city>
+    <street>ул.Космонавтов</street>
+    <house>27А</house>
+</adress>
+<phones>
+<title>ТЕЛЕФОН:</title>
+<phone_one> (0222)634597</phone_one>
+<phone_two>+375293256939</phone_two>
+</phones>
+</footer>
