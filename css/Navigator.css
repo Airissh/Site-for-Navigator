@@ -870,7 +870,7 @@ h3 {
   position: absolute;
   top: 0;
   right: 0;
-  transform: translateY(-24%);
+  transform: translateY(-6%);
   z-index: -1;
 }
 
@@ -1060,15 +1060,22 @@ input:focus:-ms-input-placeholder {
   h3 {
     font-size: 28px;
   }
-  .process-text-sm {
+  .process-text-sm,
+  .h3-cont {
     font-size: 24px;
   }
   body {
     font-size: 20px;
   }
+  .form-plash {
+    width: 610px;
+  }
 }
 
 @media screen and (max-width: 1080px) {
+  .form-plash {
+    width: 510px;
+  }
   body {
     font-size: 18px;
   }
@@ -1247,6 +1254,9 @@ input:focus:-ms-input-placeholder {
     margin-left: 20px;
   }
   /* Cost calculation end */
+  .form-plash {
+    width: 410px;
+  }
 }
 
 @media screen and (max-width: 890px) {
@@ -1531,6 +1541,21 @@ input:focus:-ms-input-placeholder {
   .bg-footer {
     height: 25vh;
   }
+  .form-plash {
+    width: 400px;
+    height: 400px;
+  }
+  .form-plash-blue {
+    width: 280px;
+    height: 400px;
+  }
+  .h3-cont {
+    font-size: 20px;
+    margin: 100px 30px;
+  }
+  .h2-cont {
+    margin: 20px 30px;
+  }
 }
 
 @media screen and (max-width: 796px) {
@@ -1658,6 +1683,17 @@ input:focus:-ms-input-placeholder {
   }
   h3 {
     font-size: 14px;
+  }
+  .form-plash {
+    width: 300px;
+    height: 300px;
+  }
+  .form-plash-blue {
+    width: 230px;
+    height: 300px;
+  }
+  .h3-cont {
+    font-size: 16px;
   }
   /*Main-screen styles start*/
   .feedback {
@@ -1827,7 +1863,14 @@ input:focus:-ms-input-placeholder {
   .h2-cont {
     margin-bottom: 50px;
   }
-
+  .form-plash {
+    width: 200px;
+    height: 300px;
+  }
+  .form-plash-blue {
+    width: 230px;
+    height: 300px;
+  }
   /*Main-screen styles start*/
   .main-screen {
     background-size: 1400px;
@@ -1941,3 +1984,27 @@ input:focus:-ms-input-placeholder {
   }
 }
 /*Media end*/
+
+/* Button up */
+#back-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 20;
+}
+
+/* arrow icon (span tag) */
+#back-top span {
+  width: 112px;
+  height: 128px;
+  display: block;
+  background: url(../elements/up-arrow-hover3.svg) no-repeat center center;
+
+  /* transition */
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+#back-top a:hover span {
+  background: url(../elements/up-arrow2.svg) no-repeat center center;
+}
