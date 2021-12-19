@@ -1,3 +1,5 @@
+
+// burger menu start
 (function(){
     const burgerItem = document.querySelector('.burger');
     const menu = document.querySelector('.header-nav');
@@ -10,7 +12,10 @@ menuclose.addEventListener('click', () => {
 });
 })    
 }())
+// end burger menu
 
+
+// cost calculation start
 function calculation() {
 
     typeAdd = document.getElementById('type-add').value
@@ -93,8 +98,10 @@ function calculation() {
     }
     document.getElementById('stoimost').innerHTML = stoimost +" бел.руб.";
     }
+// end cost calculation
 
 
+// xml start
     window.onload = function () {
         var str, domParser, xmlDoc, city, street, house, phoneone, phonetwo, author, name, cityi, streeti, housei, phoneonei, phonetwoi ;
     
@@ -136,7 +143,9 @@ function calculation() {
 
         author.innerHTML = "© " + name;
     };
+// end xml
 
+    // up-arrow scroll
     $(document).ready(function(){
         // hide #back-top first
         $("#back-top").hide();
@@ -154,9 +163,51 @@ function calculation() {
         $('#back-top a').click(function () {
         $('body,html').animate({
         scrollTop: 0
-        }, 500);
+        }, 600);
         return false;
         });
         });
         });
+// end up-arrow
 
+        // плавный скролл для меню
+        // Scroll to anchors
+(function () {
+
+    const smoothScroll = function (targetEl, duration) {
+        const headerElHeight =  document.querySelector('.header').clientHeight;
+        let target = document.querySelector(targetEl);
+        let targetPosition = target.getBoundingClientRect().top - headerElHeight;
+        let startPosition = window.pageYOffset;
+        let startTime = null;
+    
+        const ease = function(t,b,c,d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        };
+    
+        const animation = function(currentTime){
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, targetPosition, duration);
+            window.scrollTo(0,run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        };
+        requestAnimationFrame(animation);
+
+    };
+
+    const scrollTo = function () {
+        const links = document.querySelectorAll('.js-scroll');
+        links.forEach(each => {
+            each.addEventListener('click', function () {
+                const currentTarget = this.getAttribute('href');
+                smoothScroll(currentTarget, 600);
+            });
+        });
+    };
+    scrollTo();
+}());
+// end scroll
